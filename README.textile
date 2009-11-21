@@ -1,6 +1,6 @@
-h1. BaseGenerator
+h1. BaseGenerators
 
-BaseGenerator provides two generators:
+BaseGenerators provides two generators:
 
 h2. base_bootstrap
 
