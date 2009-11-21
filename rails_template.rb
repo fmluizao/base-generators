@@ -67,7 +67,7 @@ end
 initializer 'load_settings.rb', %q(APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/settings.yml")[RAILS_ENV].symbolize_keys)
 file 'config/settings.yml', %q(
 development: &non_production_settings
-  site_name: App Name
+  site_name: App From Hell!
   admin_email: some@example.com
   
 test:
