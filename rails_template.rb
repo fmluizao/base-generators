@@ -157,7 +157,7 @@ git :commit => "-a -m 'Initial commit'"
 
 generate("base_bootstrap application")
 generate("rspec")
-generate("theme --no-layout --theme=warehouse")
+generate("theme --no-layout --theme=reidb-greenish")
 generate("formtastic")
 file 'public/stylesheets/formtastic_changes.css', 
 %q(form.formtastic.search fieldset {
