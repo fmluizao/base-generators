@@ -25,6 +25,7 @@ gem 'inherited_resources', :source => 'http://gemcutter.org'
 gem 'formtastic', :source => 'http://gemcutter.org'
 gem 'web-app-theme', :source => 'http://gemcutter.org', :lib => false
 gem 'haml'
+gem 'searchlogic', :version => '~> 2.3.6',
 gem 'validation_reflection'
 gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
 
