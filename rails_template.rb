@@ -173,6 +173,9 @@ form.formtastic.search  {
   padding: .5em;
   margin-bottom:  0.5em;
 }
+.actions {
+  margin-bottom: 1em;
+}
 )
 file 'lib/tasks/bootstrap.rake',
 %q(namespace :app do

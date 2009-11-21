@@ -13,4 +13,7 @@ $(function(){
   $('#search').livequery(function(){
     $(this).ajaxForm({target: '#results'});
   });
+  $('.search-toggle').click(function(){
+    $('#search').toggle();
+  });
 });
