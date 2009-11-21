@@ -170,6 +170,7 @@ form.formtastic.search fieldset legend {
 }
 form.formtastic.search  {
   background-color: #F1F1F1;
+  display: none;
   padding: .5em;
   margin-bottom:  0.5em;
 }
