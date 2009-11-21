@@ -1,0 +1,4 @@
+- block '<%= plural_name.humanize %>' do
+  = render :partial => 'search'
+  = render :partial => '<%= plural_name %>', :object => @<%= plural_name %>    
+  = link_to 'New <%= singular_name %>', new_resource_url

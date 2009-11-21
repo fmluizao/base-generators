@@ -1,0 +1,6 @@
+- block "New <%= singular_name %>" do
+  - semantic_form_for(@<%= singular_name %>, :url => collection_url) do |f|
+    = render :partial => "form", :locals => { :f => f }
+    = f.buttons
+
+  = link_to 'Back', collection_url

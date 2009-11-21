@@ -1,0 +1,25 @@
+h1. MultiScaffold Generator
+
+h2. Requirements:
+
+  * Formtastic
+  * InheritedResources
+  * jQuery
+  * WillPaginate
+  * Searchlogic
+
+h2. General examples
+
+h3. Common example
+
+<pre>
+  ruby script/generate scaffold_for Product name:string price:decimal notes:text enabled:boolean
+</pre>
+
+h3. Supporting namespaces
+
+<pre>
+  ruby script/generate scaffold_for Admin::Product name:string price:decimal --skip-migration
+</pre>
+
+(c) Copyright 2009 Lucas Florio. MIT License. 

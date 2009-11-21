@@ -1,0 +1,34 @@
+- show_content_if yield(:sidebar) do |content|
+  .block
+    %h3
+      Actions
+    %ul.navigation
+      = content
+  .clear
+
+- show_content_if yield(:search) do |content|
+  .block
+    %h3
+      Search
+    .sidebar-block
+      = content
+  .clear
+
+        
+.block.notice
+  %h4
+    Notice Title
+  %p
+    Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac aliquam blandit, lectus eros hendrerit eros, at eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. Aenean tempor venenatis dolor.
+
+.block
+  .sidebar-block
+    %h4
+      Sidebar Inner block Title
+    %p
+      Morbi posuere urna vitae nunc. Curabitur ultrices, lorem ac
+      %a{ :href => "#" }
+        aliquam blandit
+      , lectus eros hendrerit eros, at eleifend libero ipsum hendrerit urna. Suspendisse viverra. Morbi ut magna. Praesent id ipsum. Sed feugiat ipsum ut felis. Fusce vitae nibh sed risus commodo pulvinar. Duis ut dolor. Cras ac erat pulvinar tortor porta sodales. Aenean tempor venenatis dolor.
+
+.clear

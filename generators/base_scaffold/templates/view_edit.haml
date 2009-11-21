@@ -1,0 +1,6 @@
+- block "Editing <%= singular_name %>" do
+  - semantic_form_for(@<%= singular_name %>, :url => resource_url, :html => { :method => :put}) do |f|
+    = render :partial => "form", :locals => { :f => f }
+    = f.buttons
+
+  = link_to 'Show', resource_url

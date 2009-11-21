@@ -1,0 +1,23 @@
+- javascript 'common'
+
+#results
+  %table.table
+    %tr
+  <% for attribute in attributes -%>
+    %th.order_by<%= (attribute == attributes.first) ? ".first" : "" %>= order @search, :by => :<%= attribute.name %>
+  <% end -%>
+    %th.last
+    - <%= plural_name %>.each do |<%= singular_name %>|
+      %tr{:class => cycle('odd', 'even')}
+      <%- for attribute in attributes %>
+        %td= h <%= singular_name %>.<%= attribute.name %>
+      <%- end -%>    
+        %td.last
+          = link_to 'Show', resource_url(<%= singular_name %>)
+          = link_to 'Edit', edit_resource_url(<%= singular_name %>)
+          = link_to 'Destroy', resource_url(<%= singular_name %>), :confirm => 'Are you sure?', :method => :delete
+
+  .actions-bar
+    = will_paginate <%= plural_name %>
+
+  .clear
