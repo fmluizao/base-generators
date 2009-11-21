@@ -17,6 +17,7 @@ class BaseBootstrapGenerator < Rails::Generator::NamedBase
         m.file(html_basename, "app/views/common/#{html_basename}")
       end
       m.file("layout.html.haml", "app/views/layouts/#{@layout_name}.html.haml")
+      m.file("base_helper.rb", "app/helpers/base_helper.rb")
     end
   end
   
