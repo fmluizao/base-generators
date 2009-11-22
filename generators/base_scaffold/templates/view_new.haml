@@ -3,4 +3,5 @@
     = render :partial => "form", :locals => { :f => f }
     = f.buttons
 
-  = link_to 'Back', collection_url
+- content_for :actions do
+  = sidebar_link 'View All', collection_url

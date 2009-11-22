@@ -1,9 +1,8 @@
 - block '<%= plural_name.humanize %>' do
-  .actions
-    = link_to 'Search', "#", :class => 'search-toggle'
-    \|
-    = link_to 'New product', new_resource_url
-  = render :partial => 'search'
   = render :partial => '<%= plural_name %>', :object => @<%= plural_name %>    
 
-  = link_to 'New <%= singular_name %>', new_resource_url
+- content_for :actions do
+  = sidebar_link 'New product', new_resource_url
+
+- content_for :search do
+  = render :partial => 'search'

@@ -5,5 +5,6 @@
     =h @<%= singular_name %>.<%= attribute.name %>
   <% end -%>
   
-  = link_to 'Edit', edit_resource_url
-  = link_to 'Back', collection_url
+- content_for :actions do
+  = sidebar_link 'Edit', edit_resource_url
+  = sidebar_link 'View All', collection_url

@@ -13,7 +13,7 @@ $(function(){
   $('#search').livequery(function(){
     $(this).ajaxForm({target: '#results'});
   });
-  $('.search-toggle').click(function(){
-    $('#search').toggle();
+  $('.toggle-block').click(function(){
+    $(this).parents('.block').children('.sidebar-block').toggle();
   });
-});
+});|
