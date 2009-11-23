@@ -16,4 +16,4 @@ $(function(){
   $('.toggle-block').click(function(){
     $(this).parents('.block').children('.sidebar-block').toggle();
   });
-});|
+});
