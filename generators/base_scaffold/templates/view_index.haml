@@ -2,7 +2,7 @@
   = render :partial => '<%= plural_name %>', :object => @<%= plural_name %>    
 
 - content_for :actions do
-  = sidebar_link 'New product', new_resource_url
+  = sidebar_link 'New<%= singular_name %>', new_resource_url
 
 - content_for :search do
   = render :partial => 'search'
