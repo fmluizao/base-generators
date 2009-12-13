@@ -1,4 +1,4 @@
-- block "<%= singular_name.humanize %>" do
+- block "<%= singular_name.underscore.humanize %>" do
   <% for attribute in attributes %>
   %p
     %strong <%= attribute.column.human_name %>:

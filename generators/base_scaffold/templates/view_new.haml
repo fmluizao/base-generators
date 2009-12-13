@@ -1,4 +1,4 @@
-- block "New <%= singular_name %>" do
+- block "New <%= singular_name.underscore.humanize %>" do
   - semantic_form_for(@<%= singular_name %>, :url => collection_url) do |f|
     = render :partial => "form", :locals => { :f => f }
     = f.buttons
