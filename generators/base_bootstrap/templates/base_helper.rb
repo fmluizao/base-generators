@@ -9,7 +9,17 @@ module BaseHelper
   def show_title?
     @show_title
   end
-
+  def nav_link(title, url, options = {})
+    link = link_to(title, url)
+    # solo si LockDown me deja!
+    unless link.blank?
+      # Activo el item? 
+      options = params[:controller].include?(options[:controller] || title.underscore) ? {:class => "active"}  : {}
+      haml_tag :li, options do
+        haml_concat link
+      end
+    end
+  end
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args) }
   end
