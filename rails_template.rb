@@ -36,7 +36,6 @@ gem 'haml'
 gem 'searchlogic', :version => '~> 2.3.6'
 gem 'validation_reflection'
 gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
-gem 'bullet', :source => 'http://gemcutter.org'
 # Testing 
 gem 'rspec', :lib => false
 gem 'rspec-rails', :lib => false
@@ -75,22 +74,6 @@ initializer 'requires.rb',
 end
 }
 
-initializer 'bullet.rb',
-%q{if Rails.env.development?
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.alert = false
-    Bullet.bullet_logger = true
-    Bullet.console = true
-    begin # Horrible
-      require 'ruby-growl'
-      Bullet.growl = true
-    rescue MissingSourceFile
-    end
-    Bullet.rails_logger = false
-    Bullet.disable_browser_cache = true
-  end
-end}
 initializer 'load_settings.rb', %q(APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/settings.yml")[RAILS_ENV].symbolize_keys)
 file 'config/settings.yml', %q(
 development: &non_production_settings
