@@ -13,27 +13,35 @@ run "cp config/database.yml config/database.yml.example"
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 file '.gitignore', <<-END
+doc/api
+doc/app
 .DS_Store
-log/*.log
-tmp/**/*
 config/database.yml
 db/*.sqlite3
+db/schema.rb
+tmp/**/*
+log/*.log
+nbproject/
+*.sw?
+db/sphinx
+public/system
+index/
+
 END
 
-gem 'ruby-openid', :lib => 'openid'
-gem 'inherited_resources', :source => 'http://gemcutter.org'
+gem 'inherited_resources', :source => 'http://gemcutter.org', :version => '~> 1.0.0'
 gem 'formtastic', :source => 'http://gemcutter.org'
 gem 'web-app-theme', :source => 'http://gemcutter.org', :lib => false
 gem 'haml'
 gem 'searchlogic', :version => '~> 2.3.6'
 gem 'validation_reflection'
 gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
-
+gem 'bullet', :source => 'http://gemcutter.org'
 # Testing 
 gem 'rspec', :lib => false
 gem 'rspec-rails', :lib => false
 gem 'remarkable_rails', :lib => false
-gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
+gem 'factory_girl', :lib => 'factory_girl', :source => 'http://gemcutter.org'
 
 rake("gems:install", :sudo => true)
 
@@ -48,6 +56,9 @@ run "curl -L http://jquery.malsup.com/form/jquery.form.js?2.36 > public/javascri
 run "curl -L http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js > public/javascripts/jquery-ui.js"
 run "curl -L http://github.com/aaronchi/jrails/raw/master/javascripts/jrails.js > public/javascripts/jrails.js"
 run "curl -L http://github.com/brandonaaron/livequery/raw/master/jquery.livequery.js > public/javascripts/jquery.livequery.js"
+
+# UTF-8
+run "curl -L http://gist.github.com/raw/271196/def21fbdbbcc55b0e636cd381f87d0b8c144eea1/enforce_utf8.rb > config/initializers/enforce_utf8.rb"
 
 rake('db:sessions:create')
 initializer 'session_store.rb', <<-END
@@ -64,6 +75,23 @@ initializer 'requires.rb',
   require f
 end
 }
+
+initializer 'bullet.rb',
+%q{if Rails.env.development?
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = false
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    begin # Horrible
+      require 'ruby-growl'
+      Bullet.growl = true
+    rescue MissingSourceFile
+    end
+    Bullet.rails_logger = false
+    Bullet.disable_browser_cache = true
+  end
+end}
 initializer 'load_settings.rb', %q(APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/settings.yml")[RAILS_ENV].symbolize_keys)
 file 'config/settings.yml', %q(
 development: &non_production_settings
