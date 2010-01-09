@@ -45,7 +45,6 @@ gem 'factory_girl', :lib => 'factory_girl', :source => 'http://gemcutter.org'
 
 rake("gems:install", :sudo => true)
 
-plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authentication.git'
 plugin 'jrails', :git => "git://github.com/aaronchi/jrails.git"
 plugin 'hoptoad_notifier', :git => "git://github.com/thoughtbot/hoptoad_notifier.git"
 plugin 'base-generators', :git => "git://github.com/lucasefe/base-generators.git"
