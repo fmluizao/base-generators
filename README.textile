@@ -1,4 +1,4 @@
-h1. BaseGenerators
+h1. BaseGenerators (WORKING ON RAILS 3 version)
 
 BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators. 
 
