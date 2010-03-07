@@ -1,0 +1,15 @@
+- show_content_if yield(:actions) do |content|
+  .block
+    %h3.toggle-block Actions
+    .sidebar-block
+      %ul.navigation
+        = content
+  .clear
+
+- show_content_if yield(:search) do |content|
+  .block
+    %h3.toggle-block
+      %a{:title => "Click to show/hide search box"} Search
+    .sidebar-block{:style => 'display:none;'}
+      = content
+  .clear

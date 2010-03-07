@@ -1,0 +1,9 @@
+#block-tables.block
+  .secondary_navigation
+    = render :partial => 'common/secondary_navigation'
+  .content
+    %h2.title= title
+    .inner
+      - unless options[:no_flash] == true
+        = flashes
+      = content

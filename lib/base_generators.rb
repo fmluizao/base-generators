@@ -1,0 +1,3 @@
+module BaseGenerators
+
+end

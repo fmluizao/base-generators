@@ -1,0 +1,5 @@
+- unless flash.blank?
+  .flash
+    - flash.keys.each do |level|
+      .message{:class => level.to_s}
+        %p= flash[level]
