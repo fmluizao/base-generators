@@ -42,7 +42,7 @@ gem 'rspec-rails', :lib => false
 gem 'remarkable_rails', :lib => false
 gem 'factory_girl', :lib => 'factory_girl', :source => 'http://gemcutter.org'
 
-rake("gems:install", :sudo => true)
+rake("gems:install")
 
 plugin 'jrails', :git => "git://github.com/aaronchi/jrails.git"
 plugin 'hoptoad_notifier', :git => "git://github.com/thoughtbot/hoptoad_notifier.git"
