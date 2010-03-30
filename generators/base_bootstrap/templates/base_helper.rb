@@ -14,8 +14,9 @@ module BaseHelper
     # solo si LockDown me deja!
     unless link.blank?
       # Activo el item? 
-      options = params[:controller].include?(options[:controller] || title.underscore) ? {:class => "active"}  : {}
-      haml_tag :li, options do
+      css = {}
+      css = {:class => "active"} if (params[:controller].=~ options[:active] || params[:controller].include?(title.underscore)) 
+      haml_tag :li, css do
         haml_concat link
       end
     end
@@ -44,11 +45,19 @@ module BaseHelper
   def block(title, options = {}, &block)
     content = capture(&block)
     out = render :partial => 'common/block', :locals => { 
+      :secondary_navigation => secondary_navigation_content,
       :title => title, 
       :content => content, 
       :options => options
     }
     concat out
+  end
+  def secondary_navigation_content
+    if @@default_secondary_navigation_path
+      render(:partial => @@default_secondary_navigation_path)
+    else
+      ""
+    end
   end
   def block_form(title, &block)
     content = capture(&block)

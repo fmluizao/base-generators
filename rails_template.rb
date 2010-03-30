@@ -50,7 +50,7 @@ plugin 'base-generators', :git => "git://github.com/lucasefe/base-generators.git
 
 # Download JQuery
 run "curl -L http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js > public/javascripts/jquery.js"
-run "curl -L http://jquery.malsup.com/form/jquery.form.js?2.36 > public/javascripts/jquery.form.js"
+run "curl -L http://github.com/malsup/form/raw/master/jquery.form.js?v2.40 > public/javascripts/jquery.form.js"
 run "curl -L http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js > public/javascripts/jquery-ui.js"
 run "curl -L http://github.com/aaronchi/jrails/raw/master/javascripts/jrails.js > public/javascripts/jrails.js"
 run "curl -L http://github.com/brandonaaron/livequery/raw/master/jquery.livequery.js > public/javascripts/jquery.livequery.js"
