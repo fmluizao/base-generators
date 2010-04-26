@@ -1,23 +1,17 @@
+# Rakefile
+require 'rubygems'
 require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require 'echoe'
 
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the scaffold_it plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+Echoe.new('base-generators', '0.1.0') do |p|
+  p.summary        = "Rails Generators using SearchLogic, Formtastic, jquery and many more."
+  p.description    = "BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators."
+  p.url            = "http://github.com/lucasefe/base-generators"
+  p.author         = "Lucas Efe"
+  p.email          = "lucasefe@gmail.com"
+  p.ignore_pattern = ["tmp/*", "script/*"]
+  p.development_dependencies = []
 end
 
-desc 'Generate documentation for the scaffold_it plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'ScaffoldIt'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
+
