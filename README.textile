@@ -12,9 +12,11 @@ Easy, dude.
 
 h2. Generators
 
+It provides two generators (so far)
+
 h3. base_bootstrap
 
-This generator copies all the templates and helper methods needed for the base_scaffold generator.
+This generator copies all the templates and helper methods needed for the base_scaffold generator to work.
 
 <pre>
   ruby script/generate base_bootstrap layout_name
@@ -36,16 +38,17 @@ h2. Dependencies
 ** inherited_resources
 ** searchlogic
 ** validation_reflection
-** web-app-theme
+** web-app-theme (only needed for the bootstrap)
 ** will_paginate
 ** show_for (version 0.1.3)
 
 * Javascripts Files
 ** "jquery":http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js
-** "jquery.form":http://jquery.malsup.com/form/jquery.form.js?2.36 
+** "jquery.form":http://github.com/malsup/form/raw/master/jquery.form.js?v2.40 
 ** "jquery-ui":http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js 
 ** "jrails":http://github.com/aaronchi/jrails/raw/master/javascripts/jrails.js 
 ** "livequery":http://github.com/brandonaaron/livequery/raw/master/jquery.livequery.js 
+
 
 h2. PLUS: Easy bootstrap of your new app!
 
@@ -53,9 +56,8 @@ If your starting with a new app, then you can rely on my own rails template to i
 *Warning*: Although it's base on other rails templates, it also includes my personal choices, so you may not agree with it. 
 
 <pre>
-rails -m http://github.com/lucasefe/base-generators/raw/master/rails_template.rb my_new_rails_app
+  rails -m http://github.com/lucasefe/base-generators/raw/master/rails_template.rb my_new_rails_app
 </pre>
-
 
 h2. Disclaimer
 
