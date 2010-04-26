@@ -1,9 +1,8 @@
 - block "<%= singular_name.underscore.humanize %>" do
-  <% for attribute in attributes %>
-  %p
-    %strong <%= attribute.column.human_name %>:
-    =h @<%= singular_name %>.<%= attribute.name %>
-  <% end -%>
+  - show_for @<%= singular_name %> do |<%= singular_name %>|
+    <% for attribute in attributes %>
+      = <%= singular_name %>.attribute :<%= attribute.name %>
+    <% end -%>
   
 - content_for :actions do
   = sidebar_link 'Edit', edit_resource_url
