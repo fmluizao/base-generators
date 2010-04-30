@@ -63,4 +63,4 @@ h2. Disclaimer
 
 This is a work in progress, so don't complain about it. If you don't like something, contribute to fix it. 
 
-(c) Copyright 2009 Lucas Florio. MIT License. Do whatever you want.
+(c) Copyright 2008-2009-2010 Lucas Florio. Do whatever you want. MIT licensed. 
