@@ -5,19 +5,23 @@
 
 Gem::Specification.new do |s|
   s.name = %q{base-generators}
-  s.version = "0.1.3"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lucas Efe"]
-  s.date = %q{2010-04-26}
+  s.date = %q{2010-05-02}
   s.description = %q{BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators.}
   s.email = %q{lucasefe@gmail.com}
   s.extra_rdoc_files = [
-    "README.textile"
+    "README.2.3.textile",
+     "README.3.textile",
+     "README.textile"
   ]
   s.files = [
     ".gitignore",
      "MIT-LICENSE",
+     "README.2.3.textile",
+     "README.3.textile",
      "README.textile",
      "Rakefile",
      "VERSION",
@@ -45,6 +49,32 @@ Gem::Specification.new do |s|
      "generators/base_scaffold/templates/view_index.js.haml",
      "generators/base_scaffold/templates/view_new.haml",
      "generators/base_scaffold/templates/view_show.haml",
+     "lib/common_generators.rb",
+     "lib/generators/common.rb",
+     "lib/generators/common/layout/layout_generator.rb",
+     "lib/generators/common/layout/templates/_block.html.haml",
+     "lib/generators/common/layout/templates/_flashes.html.haml",
+     "lib/generators/common/layout/templates/_header.html.haml",
+     "lib/generators/common/layout/templates/_secondary_navigation.html.haml",
+     "lib/generators/common/layout/templates/_sidebar.html.haml",
+     "lib/generators/common/layout/templates/base_helper.rb",
+     "lib/generators/common/layout/templates/bootstrap.rake",
+     "lib/generators/common/layout/templates/compass_config.rb",
+     "lib/generators/common/layout/templates/layout.html.haml",
+     "lib/generators/common/layout/templates/settings.yml",
+     "lib/generators/common/scaffold/scaffold_generator.rb",
+     "lib/generators/common/scaffold/templates/controller.rb",
+     "lib/generators/common/scaffold/templates/helper.rb",
+     "lib/generators/common/scaffold/templates/migration.rb",
+     "lib/generators/common/scaffold/templates/model.rb",
+     "lib/generators/common/scaffold/templates/rspec/model.rb",
+     "lib/generators/common/scaffold/templates/views/_collection.html.haml",
+     "lib/generators/common/scaffold/templates/views/_form.html.haml",
+     "lib/generators/common/scaffold/templates/views/edit.html.haml",
+     "lib/generators/common/scaffold/templates/views/index.html.haml",
+     "lib/generators/common/scaffold/templates/views/index.js.haml",
+     "lib/generators/common/scaffold/templates/views/new.html.haml",
+     "lib/generators/common/scaffold/templates/views/show.html.haml",
      "rails/init.rb",
      "rails_template.rb",
      "tasks/scaffold_it_tasks.rake",
@@ -55,7 +85,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/lucasefe/base-generators}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.6.1}
   s.summary = %q{Rails Generators using SearchLogic, Formtastic, jquery and many more.}
   s.test_files = [
     "test/scaffold_it_test.rb",
@@ -66,7 +96,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<searchlogic>, [">= 2.4.19"])
       s.add_runtime_dependency(%q<inherited_resources>, ["= 1.0.6"])
       s.add_runtime_dependency(%q<formtastic>, ["= 0.9.8"])
