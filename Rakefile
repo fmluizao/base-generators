@@ -23,13 +23,14 @@ begin
     gemspec.homepage            = "http://github.com/lucasefe/base-generators"
     gemspec.authors         = ["Lucas Efe"]
     gemspec.email          = "lucasefe@gmail.com"
-    gemspec.add_dependency('searchlogic', '>= 2.4.19')
-    gemspec.add_dependency('inherited_resources', '= 1.0.6')
-    gemspec.add_dependency('formtastic','= 0.9.8')
-    gemspec.add_dependency('validation_reflection','= 0.3.6')
-    gemspec.add_dependency('show_for','= 0.1.3')
-    gemspec.add_dependency('will_paginate','= 2.3.12')
-    gemspec.add_dependency('haml','2.2.23')
+    # This doesn't belong here
+    # gemspec.add_dependency('searchlogic', '>= 2.4.19')
+    # gemspec.add_dependency('inherited_resources', '= 1.0.6')
+    # gemspec.add_dependency('formtastic','= 0.9.8')
+    # gemspec.add_dependency('validation_reflection','= 0.3.6')
+    # gemspec.add_dependency('show_for','= 0.1.3')
+    # gemspec.add_dependency('will_paginate','= 2.3.12')
+    # gemspec.add_dependency('haml','3.0.0.rc.2')
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

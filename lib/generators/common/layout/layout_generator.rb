@@ -63,22 +63,22 @@ Compass.handle_configuration_change!
         run "curl -L http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js > public/javascripts/jquery-ui.js"
         run "curl -L http://github.com/brandonaaron/livequery/raw/master/jquery.livequery.js > public/javascripts/jquery.livequery.js"
         
-        gem "inherited_resources", ">= 1.1.0"
+        gem "inherited_resources", ">= 1.1.1"
         gem 'formtastic', :branch => 'rails3', :git => 'git://github.com/justinfrench/formtastic.git'
         gem "web-app-theme", :git => "git://github.com/lucasefe/web-app-theme.git"
         gem 'validation_reflection'
         gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
         gem 'show_for'
-        
-        gem 'webrat', :group => :test
-        gem "cucumber",  ">= 0.6.2", :group => :test        
-        gem 'faker', :group => :test
-        gem 'factory_girl', :group => :test
-        
         gem "haml", "3.0.0.rc.2"
         gem 'compass', '0.10.0.rc4'
         gem 'compass-960-plugin'
-
+                
+        gem 'faker', :group => :test
+        gem 'factory_girl', :group => :test
+        gem 'capybara',         :git => 'git://github.com/jnicklas/capybara.git', :group => :test
+        gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git', :group => :test
+        gem 'cucumber-rails',   :git => 'git://github.com/aslakhellesoy/cucumber-rails.git', :group => :test
+        
         in_root { run "bundle install" }
 
         generate("responders_install")
