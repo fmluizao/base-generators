@@ -1,0 +1,22 @@
+#results
+  %table.table
+    %tr
+  <% for attribute in model_attributes -%>
+    %th<%= (attribute == model_attributes.first) ? ".first" : "" %> <%= attribute.name.humanize %>
+  <% end -%>
+    %th.last
+    - <%= collection_name %>.each do |<%= instance_name %>|
+      %tr{:class => cycle('odd', 'even')}
+      <%- for attribute in model_attributes %>
+        %td= h <%= instance_name %>.<%= attribute.name %>
+      <%- end -%>    
+        %td.last
+          = link_to 'Show', resource_url(<%= instance_name %>)
+          = link_to 'Edit', edit_resource_url(<%= instance_name %>)
+          = link_to 'Destroy', resource_url(<%= instance_name %>), :confirm => 'Are you sure?', :method => :delete
+
+  .actions-bar
+    = will_paginate <%= collection_name %>
+  .clear
+  
+  

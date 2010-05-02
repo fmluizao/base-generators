@@ -1,0 +1,7 @@
+- javascript 'common'
+
+= block '<%= plural_name.underscore.humanize %>' do
+  = render :partial => '<%= collection_name %>', :locals => { :<%= collection_name %> => @<%= collection_name %> }
+
+- content_for :actions do
+  = sidebar_link 'New <%= singular_name.underscore.humanize %>', new_resource_url

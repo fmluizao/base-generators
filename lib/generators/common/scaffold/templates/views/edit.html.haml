@@ -1,0 +1,8 @@
+= block "Editing <%= singular_name.underscore.humanize %>" do
+  - semantic_form_for(@<%= instance_name %>, :url => resource_url, :html => { :method => :put}) do |f|
+    = render :partial => "form", :locals => { :f => f }
+    = f.buttons
+
+- content_for :actions do
+  = sidebar_link 'Show', resource_url
+  = sidebar_link 'View All', collection_url

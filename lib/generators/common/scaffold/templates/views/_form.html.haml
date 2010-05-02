@@ -1,0 +1,4 @@
+- f.inputs do 
+<%- for attribute in model_attributes -%>
+  = f.input :<%= attribute.name %>
+<% end -%>

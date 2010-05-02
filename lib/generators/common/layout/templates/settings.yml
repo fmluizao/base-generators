@@ -1,0 +1,12 @@
+development: &non_production_settings
+  site_name: App From Hell!
+  admin_email: some@example.com
+
+test:
+  <<: *non_production_settings
+
+staging:
+  <<: *non_production_settings
+
+production:
+  <<: *non_production_settings
