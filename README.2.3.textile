@@ -1,0 +1,33 @@
+h1. Using Generators On Rails 2.3
+
+h2. Installation
+
+Easy, dude.
+<pre>
+  gem install base-generators
+</pre>
+
+or 
+<pre>
+  ruby script/plugin install git://github.com/lucasefe/base-generators.git
+</pre>
+
+h2. Generators
+
+It provides two generators (so far)
+
+h3. base_bootstrap
+
+This generator copies all the templates and helper methods needed for the base_scaffold generator to work.
+
+<pre>
+  ruby script/generate base_bootstrap layout_name
+</pre>
+
+h3. base_scaffold
+
+This generator provides a scaffold structure that implements "ajax":http://github.com/jquery/jquery/ "pagination":http://github.com/mislav/will_paginate, "search":http://github.com/binarylogic/searchlogic, and "base html style":http://github.com/pilu/web-app-theme. Most of the functionality is built with standard ruby gems. Clearly, I am not trying to reinvent the wheel, but to embrace our wonderful community. 
+
+<pre>
+  ruby script/generate base_scaffold Product name:string price:decimal notes:text enabled:boolean
+</pre>

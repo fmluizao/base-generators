@@ -1,34 +1,9 @@
 h1. BaseGenerators
 
-BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators. 
+BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators. So far, it provides them for Rails 2.3 and Rails 3. Sadly, the interface for writing generators in Rails 3 has changed, so for that version everything is pretty different. 
 
-h2. Installation
-
-Easy, dude.
-
-<pre>
-  ruby script/plugin install git://github.com/lucasefe/base-generators.git
-</pre>
-
-h2. Generators
-
-It provides two generators (so far)
-
-h3. base_bootstrap
-
-This generator copies all the templates and helper methods needed for the base_scaffold generator to work.
-
-<pre>
-  ruby script/generate base_bootstrap layout_name
-</pre>
-
-h3. base_scaffold
-
-This generator provides a scaffold structure that implements "ajax":http://github.com/jquery/jquery/ "pagination":http://github.com/mislav/will_paginate, "search":http://github.com/binarylogic/searchlogic, and "base html style":http://github.com/pilu/web-app-theme. Most of the functionality is built with standard ruby gems. Clearly, I am not trying to reinvent the wheel, but to embrace our wonderful community. 
-
-<pre>
-  ruby script/generate base_scaffold Product name:string price:decimal notes:text enabled:boolean
-</pre>
+* "Using the generators on Rails 2.3":http://github.com/lucasefe/base-generators/README.2.3.textile
+* "Using the generators on Rails 3":http://github.com/lucasefe/base-generators/README.3.textile
 
 h2. Dependencies
 
@@ -49,8 +24,7 @@ h2. Dependencies
 ** "jrails":http://github.com/aaronchi/jrails/raw/master/javascripts/jrails.js 
 ** "livequery":http://github.com/brandonaaron/livequery/raw/master/jquery.livequery.js 
 
-
-h2. PLUS: Easy bootstrap of your new app!
+h2. PLUS: Easy bootstrap of your new app! (recommended only on Rails 2.3)
 
 If your starting with a new app, then you can rely on my own rails template to install the dependencies. 
 *Warning*: Although it's base on other rails templates, it also includes my personal choices, so you may not agree with it. 

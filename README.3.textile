@@ -1,0 +1,35 @@
+h1. Using Generators On Rails 3
+
+h2. Installation
+
+Add this to your Gemfile:
+
+<pre>
+  gem "base-generators"
+</pre>
+
+and do a simple:
+
+<pre>
+  bundle install
+</pre>
+
+h2. Generators
+
+I have chosen not to go with the older base_ prefix, because it is too generic. Instead, the new prefix is common, so you get the following two creatures. 
+
+h3. common:layout
+
+This generator copies all the templates and helper methods needed for the base_scaffold generator to work.
+
+<pre>
+  rails generate common:layout layout_name
+</pre>
+
+h3. common:scaffold
+
+This generator provides a scaffold structure that implements "ajax":http://github.com/jquery/jquery/ "pagination":http://github.com/mislav/will_paginate, "search":http://github.com/binarylogic/searchlogic, and "base html style":http://github.com/pilu/web-app-theme. Most of the functionality is built with standard ruby gems. Clearly, I am not trying to reinvent the wheel, but to embrace our wonderful community. 
+
+<pre>
+  rails generate common:scaffold Product name:string price:decimal notes:text enabled:boolean
+</pre>
