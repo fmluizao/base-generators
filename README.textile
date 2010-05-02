@@ -2,8 +2,8 @@ h1. BaseGenerators
 
 BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators. So far, it provides them for Rails 2.3 and Rails 3. Sadly, the interface for writing generators in Rails 3 has changed, so for that version everything is pretty different. 
 
-* "Using the generators on Rails 2.3":http://github.com/lucasefe/base-generators/README.2.3.textile
-* "Using the generators on Rails 3":http://github.com/lucasefe/base-generators/README.3.textile
+* "Using the generators on Rails 2.3":http://github.com/lucasefe/base-generators/blob/master/README.2.3.textile
+* "Using the generators on Rails 3":http://github.com/lucasefe/base-generators/blob/master/README.3.textile
 
 h2. Dependencies
 
