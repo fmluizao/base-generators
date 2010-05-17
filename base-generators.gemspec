@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{base-generators}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lucas Efe"]
-  s.date = %q{2010-05-02}
+  s.date = %q{2010-05-17}
   s.description = %q{BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators.}
   s.email = %q{lucasefe@gmail.com}
   s.extra_rdoc_files = [
@@ -85,7 +85,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/lucasefe/base-generators}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6.1}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Rails Generators using SearchLogic, Formtastic, jquery and many more.}
   s.test_files = [
     "test/scaffold_it_test.rb",
@@ -96,7 +96,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
     else
     end
   else
