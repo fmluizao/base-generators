@@ -1,0 +1,6 @@
+= simple_form_for @search, :html => {:class => 'search', :id => 'search' } do |f|
+  <%- for attribute in model_attributes -%>
+  = f.input :<%= attribute.name %>_like, :label => <%= class_name %>.human_attribute_name(:<%= attribute.name %>), :required => false
+  <%- end -%>
+  = f.submit t(:search)
+  = link_to t(:cancel), "#", :class => 'toggle-block'

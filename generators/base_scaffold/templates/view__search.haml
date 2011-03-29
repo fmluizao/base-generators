@@ -1,7 +1,0 @@
-- semantic_form_for @search, :html => {:class => 'search', :id => 'search' } do |f|
-  - f.inputs do 
-    <%- for attribute in attributes -%>
-    = f.input :<%= attribute.name %>_like, :label => '<%= attribute.name.humanize %>', :required => false
-    <%- end -%>
-    = f.submit "Search"
-    = link_to 'Cancel', "#", :class => 'toggle-block'

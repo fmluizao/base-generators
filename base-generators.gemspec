@@ -12,85 +12,13 @@ Gem::Specification.new do |s|
   s.date = %q{2010-05-17}
   s.description = %q{BaseGenerators tries to ease the pain of starting a new app from scratch by automating tasks with generators.}
   s.email = %q{lucasefe@gmail.com}
-  s.extra_rdoc_files = [
-    "README.2.3.textile",
-     "README.3.textile",
-     "README.textile"
-  ]
-  s.files = [
-    ".gitignore",
-     "MIT-LICENSE",
-     "README.2.3.textile",
-     "README.3.textile",
-     "README.textile",
-     "Rakefile",
-     "VERSION",
-     "base-generators.gemspec",
-     "generators/base_bootstrap/base_bootstrap_generator.rb",
-     "generators/base_bootstrap/templates/_block.html.haml",
-     "generators/base_bootstrap/templates/_block_form.html.haml",
-     "generators/base_bootstrap/templates/_flashes.html.haml",
-     "generators/base_bootstrap/templates/_header.html.haml",
-     "generators/base_bootstrap/templates/_secondary_navigation.html.haml",
-     "generators/base_bootstrap/templates/_sidebar.html.haml",
-     "generators/base_bootstrap/templates/base_helper.rb",
-     "generators/base_bootstrap/templates/layout.html.haml",
-     "generators/base_scaffold/base_scaffold_generator.rb",
-     "generators/base_scaffold/templates/common.js",
-     "generators/base_scaffold/templates/controller.rb",
-     "generators/base_scaffold/templates/helper.rb",
-     "generators/base_scaffold/templates/migration.rb",
-     "generators/base_scaffold/templates/model.rb",
-     "generators/base_scaffold/templates/view__collection.haml",
-     "generators/base_scaffold/templates/view__form.haml",
-     "generators/base_scaffold/templates/view__search.haml",
-     "generators/base_scaffold/templates/view_edit.haml",
-     "generators/base_scaffold/templates/view_index.haml",
-     "generators/base_scaffold/templates/view_index.js.haml",
-     "generators/base_scaffold/templates/view_new.haml",
-     "generators/base_scaffold/templates/view_show.haml",
-     "lib/common_generators.rb",
-     "lib/generators/common.rb",
-     "lib/generators/common/layout/layout_generator.rb",
-     "lib/generators/common/layout/templates/_block.html.haml",
-     "lib/generators/common/layout/templates/_flashes.html.haml",
-     "lib/generators/common/layout/templates/_header.html.haml",
-     "lib/generators/common/layout/templates/_secondary_navigation.html.haml",
-     "lib/generators/common/layout/templates/_sidebar.html.haml",
-     "lib/generators/common/layout/templates/base_helper.rb",
-     "lib/generators/common/layout/templates/bootstrap.rake",
-     "lib/generators/common/layout/templates/compass_config.rb",
-     "lib/generators/common/layout/templates/layout.html.haml",
-     "lib/generators/common/layout/templates/settings.yml",
-     "lib/generators/common/scaffold/scaffold_generator.rb",
-     "lib/generators/common/scaffold/templates/controller.rb",
-     "lib/generators/common/scaffold/templates/helper.rb",
-     "lib/generators/common/scaffold/templates/migration.rb",
-     "lib/generators/common/scaffold/templates/model.rb",
-     "lib/generators/common/scaffold/templates/rspec/model.rb",
-     "lib/generators/common/scaffold/templates/views/_collection.html.haml",
-     "lib/generators/common/scaffold/templates/views/_form.html.haml",
-     "lib/generators/common/scaffold/templates/views/edit.html.haml",
-     "lib/generators/common/scaffold/templates/views/index.html.haml",
-     "lib/generators/common/scaffold/templates/views/index.js.haml",
-     "lib/generators/common/scaffold/templates/views/new.html.haml",
-     "lib/generators/common/scaffold/templates/views/show.html.haml",
-     "rails/init.rb",
-     "rails_template.rb",
-     "tasks/scaffold_it_tasks.rake",
-     "test/scaffold_it_test.rb",
-     "test/test_helper.rb",
-     "uninstall.rb"
-  ]
+  s.files        = `git ls-files`.split("\n")
+  s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
   s.homepage = %q{http://github.com/lucasefe/base-generators}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Rails Generators using SearchLogic, Formtastic, jquery and many more.}
-  s.test_files = [
-    "test/scaffold_it_test.rb",
-     "test/test_helper.rb"
-  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

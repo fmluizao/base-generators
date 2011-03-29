@@ -54,7 +54,9 @@ module Common
               template "views/#{action}.html.haml", "app/views/#{plural_name_path}/#{action}.html.haml"
             end
           end
+          template "views/index.js.haml", "app/views/#{plural_name_path}/index.js.haml"
           template "views/_form.html.haml", "app/views/#{plural_name_path}/_form.html.haml"
+          template "views/_search.html.haml", "app/views/#{plural_name_path}/_search.html.haml"
           template "views/_collection.html.haml", "app/views/#{plural_name_path}/_#{collection_name}.html.haml"
           route "resources #{plural_name.to_sym.inspect}"
         end
