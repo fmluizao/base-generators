@@ -1,21 +1,20 @@
 #results
-  %table.table
+  %table.tabela
     %tr
   <% for attribute in model_attributes -%>
     %th.order_by<%= (attribute == model_attributes.first) ? ".first" : "" %>= sort_link @search, :<%= attribute.name %>
   <% end -%>
-    %th.last
+    %th.ico
+      %th.ico
+      %th.ico
     - @<%= collection_name %>.each do |<%= instance_name %>|
-      %tr{:class => cycle('odd', 'even')}
+      %tr
       <%- for attribute in model_attributes -%>
         %td= h <%= instance_name %>.<%= attribute.name %>
-      <%- end -%>    
-        %td.last
-          = link_to t(:show), resource_url(<%= instance_name %>)
-          = link_to t(:edit), edit_resource_url(<%= instance_name %>)
-          = link_to t(:destroy), resource_url(<%= instance_name %>), :confirm => t(:confirm), :method => :delete
+      <%- end -%>
+        %td= show_link(<%= instance_name %>)
+        %td= edit_link(<%= instance_name %>)
+        %td= destroy_link(<%= instance_name %>)
 
-  .actions-bar
-    = will_paginate @<%= collection_name %>
-  .clear
+  = paginate @beneficios
 

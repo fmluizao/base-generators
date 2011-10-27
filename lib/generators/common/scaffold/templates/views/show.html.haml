@@ -1,9 +1,11 @@
-= block t(".title") do
-  = show_for @<%= singular_name %> do |<%= singular_name %>|
-  <% for attribute in model_attributes -%>
-  = <%= singular_name %>.attribute :<%= attribute.name %>
-  <% end -%>
+= title t(".title")
 
-- content_for :actions do
+= show_for @<%= singular_name %> do |<%= singular_name %>|
+<% for attribute in model_attributes -%>
+  = <%= singular_name %>.attribute :<%= attribute.name %>
+<% end -%>
+
+- actions do
   = sidebar_link t(:edit), edit_resource_url
-  = sidebar_link t(:back), collection_url
+  = back_link collection_url
+

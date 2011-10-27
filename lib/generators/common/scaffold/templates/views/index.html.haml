@@ -1,9 +1,10 @@
-- javascript 'common'
+= title t(".title")
 
-= block t(".title") do
+- search do
   = render 'search'
-  = render '<%= collection_name %>'
 
-- content_for :actions do
+= render '<%= collection_name %>'
+
+- actions do
   = sidebar_link t('<%= collection_name %>.new.title'), new_resource_url
 

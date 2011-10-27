@@ -1,5 +1,7 @@
-= block t(".title") do
-  = render "form"
+= title t(".title")
 
-- content_for :actions do
-  = sidebar_link t(:back), collection_url
+= render "form"
+
+- actions do
+  = back_link collection_url
+
