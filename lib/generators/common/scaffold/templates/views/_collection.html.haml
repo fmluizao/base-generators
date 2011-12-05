@@ -10,7 +10,11 @@
     - @<%= collection_name %>.each do |<%= instance_name %>|
       %tr
       <%- for attribute in model_attributes -%>
+        <%- if attribute == model_attributes.first %>
+        %td= h link_to_show <%= instance_name %>.<%= attribute.name %>, <%= instance_name %>
+        <% else %>
         %td= h <%= instance_name %>.<%= attribute.name %>
+        <% end %>
       <%- end -%>
         %td= show_link(<%= instance_name %>)
         %td= edit_link(<%= instance_name %>)
